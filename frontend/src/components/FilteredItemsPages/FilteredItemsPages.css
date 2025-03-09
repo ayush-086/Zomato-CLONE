@@ -1,0 +1,6 @@
+@media (max-width: 600px) {
+    .pages-button, .prev-page, .next-page {
+        font-size: 6px;
+    }
+}
+

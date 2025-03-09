@@ -1,0 +1,136 @@
+.wallpaper {
+    margin: -100px 0 50px;
+    padding-top: 20px;
+}
+
+#header-bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.wallpaper-content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 120px 0 50px;
+    gap: 10px;
+    align-items: center;
+    color: white;
+}
+
+.wallpaper-content img {
+    width: 250px;
+    height: 50px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.wallpaper-content select {
+    padding: 10px;
+    width: 180px;
+    border-radius: 10px;
+}
+.wallpaper-content input {
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.search-results {
+    position: absolute;
+    top: 41px
+}
+
+.search-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px 20px 10px 5px;
+    width: 400px;
+    margin-top: 2px;
+    -webkit-user-select: none;
+    user-select: none;
+    color: rgb(0, 0, 0);
+}
+
+.search-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+.search-item span {
+    font-size: 14px;
+    font-weight: bold;
+}
+.search-item a {
+    color: tomato;
+    font-size: 10px;
+    &:hover {
+        color: rgb(187, 104, 89);
+    }
+}
+
+@media (max-width: 550px) {
+    .wallpaper-content {
+        padding: 80px 0 50px;
+        gap: 5px;
+        align-items: center;
+        color: white;
+    }
+    
+    .wallpaper-content img {
+        width: 140px;
+        height: 30px;
+    }
+    .wallpaper-content h2 {
+        font-size: 18px;
+    }
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .wallpaper-content select {
+        width: 250px;
+        border-radius: 8px;
+        font-size: 10px;
+        margin-right: 0;
+    }
+    .wallpaper-content input {
+        padding: 10px;
+        width: 250px;
+        border-radius: 8px;
+    }
+    .search-item {
+        padding: 5px 10px 5px 2px;
+        width: 250px;
+        border: 1px solid rgb(206, 195, 195);
+    }
+    .search-item img {
+        width: 25px;
+        height: 25px;
+        margin-right: 5px;
+    }
+    .search-item span {
+        font-size: 10px;
+        font-weight: bold;
+    }
+    .search-item a {
+        font-size: 8px;
+    }
+}

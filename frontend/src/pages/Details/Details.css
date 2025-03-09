@@ -1,0 +1,189 @@
+.details-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+hr {
+    border: none;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    margin: -18px 0 10px;
+
+}
+
+.place-order-container {
+    position: fixed; /* Use fixed positioning to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: rgba(177, 160, 160, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    overflow: hidden; 
+}
+
+.place-order {
+    max-width: 600px;
+    width: 100%;
+    overflow-y: auto; 
+    max-height: 90%;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 0 10px black;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: pan-y;
+    transition: 2s;
+}
+
+
+
+
+/* Additional styles to enhance usability of the scroll bar */
+.place-order::-webkit-scrollbar {
+    width: 14px;
+}
+
+.place-order::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.place-order::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.menu-item ul li span, .menu-item ul p, .menuitem button {
+    font-size: 15px;
+}
+
+
+.carousel {
+    max-height: 500px;
+    width: 80%;
+    margin: auto;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.images {
+    max-height: 500px;
+    height: 100%;
+}
+.details-page h1 {
+    font-size: 30px;
+    font-weight: bold;
+    -webkit-user-select: none;
+    user-select: none;
+}
+#place-order {
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: red;
+    border: none;
+    font-size: 20px;
+    color: white;
+    &:hover {
+        background-color: rgb(179, 9, 9);
+    }
+}
+
+.tab-container {
+    margin-top: 40px;
+}
+.tab-list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.tab {
+    padding: 5px 0;
+    font-size: 30px;
+}
+.tab.active {
+    outline: none;
+    padding: 5px 0;
+    border-bottom: 2px solid red;
+}
+.tab-container h2 {
+    font-size: 30px;
+    font-weight: bold;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.tab-container h5 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.tab-container p {
+    font-size: 15px;
+}
+@media (max-width: 900px) {
+    .carousel {
+        max-height: 150px;
+        width: 100%;
+    }
+
+    .place-order-container {
+        padding: 10px;
+    }
+    
+    .place-order {
+        transition: 2s;
+        max-width: 300px;
+        max-height: 90%;
+        margin: 10px auto;
+        padding: 20px;
+    }
+    .menu ul {
+        padding: 0 0 0 15px;
+    }
+    .menu li, .menu li span, .menu-header h1, .menu-header button, .place-order h2 {
+        font-size: 12px;
+    }
+
+    .menu p, .menu button, .menu-footer h3, .menu-footer button {
+        font-size:9px;
+    }
+
+    .menu button {
+        padding: 4px 8px;
+    }
+    /* Additional styles to enhance usability of the scroll bar */
+    .place-order::-webkit-scrollbar {
+        width: 12px;
+    }
+    
+    .place-order::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 1);
+        border-radius: 5px;
+        height: 40px;
+    }
+
+    .images {
+        max-height: 150px;
+        height: 100%;
+    }
+    .tab {
+        font-size: 18px;
+    }
+    .tab-container h2 {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .tab-container h5 {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .tab-container p {
+        font-size: 12px;
+    }
+}

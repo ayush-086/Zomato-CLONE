@@ -1,0 +1,98 @@
+.filter h1 {
+    font-weight: bold;
+    font-size: 35px;
+}
+.filter-page {
+    display: flex;
+    gap: 20px;
+}
+
+.filter-section {
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(185, 178, 178);
+    padding: 30px;
+    max-height: 43rem;
+}
+.filter-section p {
+    font-weight: bold;
+}
+
+.filter-section h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.filter-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-section form select {
+    border-radius: 4px;
+    margin-bottom: 5px;
+    max-width: 150px;
+}
+
+.filter-section form label {
+    display: inline;
+}
+
+.filter-section form input {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+.filter-section form button {
+    max-width: 150px;
+    margin: 4px;
+}
+.show-filter-result {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .filter h1 {
+        font-size: 20px;
+    }
+    .filter-page {
+        gap: 10px;
+    }
+    
+    .filter-section {
+        align-items: center;
+        max-height: min-content;
+    }
+    .filter-section form {
+        align-items: center;
+        justify-content: center;
+    }
+    .filter-section p {
+        font-size: 22px;
+    }
+    .filter-section form select {
+        border-radius: 2px;
+        margin-bottom: 4px;
+        max-width: 400px;
+        padding: 10px;
+    }
+
+    .filter-section form label {
+        display: inline;
+        font-size: 18px;
+    }
+
+    .filter-section form input {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+    }
+
+    .filter-section form button {
+        width: 400px;
+        margin: 4px;
+    }
+}

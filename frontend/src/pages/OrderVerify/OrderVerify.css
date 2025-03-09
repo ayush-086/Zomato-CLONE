@@ -1,0 +1,45 @@
+.success-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    margin: 20px auto;
+    padding:20px;
+    align-items: center;
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+    background-color: rgb(123, 192, 123);
+}
+
+.success-container h1 {
+    color: green;
+}
+.success-details p {
+    margin: 0;
+    font-size: 20px;
+    font-style: italic;
+    padding: 10px;
+}
+
+.failure-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    margin: 20px auto;
+    padding:20px;
+    align-items: center;
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+    background-color: rgb(238, 154, 154);
+}
+
+.failure-container h1 {
+    color: red;
+}
+.failure-container p {
+    margin: 0;
+    font-size: 20px;
+    font-style: italic;
+    padding: 10px;
+}

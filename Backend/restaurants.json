@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Vihar Colony",
+    "city": "Delhi",
+    "restaurants": [
+      {
+        "name": "Delhi Spice",
+        "location": "123 Spice Lane, Delhi",
+        "price": "1000",
+        "cuisine": ["North Indian", "Chinese"],
+        "image": ["DelhiSpice1", "DelhiSpice2", "DelhiSpice3"],
+        "email": "delhispice@restaurant.com",
+        "phone": "011-12345678",
+        "type": ["Dinner", "Lunch"],
+        "menu": [
+          { "item": "Paneer Tikka", "price": 250, "description": "Grilled paneer marinated in spices.", "type": "Veg" },
+          { "item": "Butter Chicken", "price": 300, "description": "Creamy chicken curry with buttery sauce.", "type": "Non-Veg" },
+          { "item": "Veg Manchurian", "price": 200, "description": "Deep-fried vegetable balls in a tangy sauce.", "type": "Veg" },
+          { "item": "Fried Rice", "price": 150, "description": "Stir-fried rice with vegetables and spices.", "type": "Veg" },
+          { "item": "Naan", "price": 50, "description": "Soft and fluffy Indian bread.", "type": "Veg" },
+          { "item": "Gulab Jamun", "price": 100, "description": "Sweet fried dough balls soaked in syrup.", "type": "Veg" }
+        ]
+      },
+      {
+        "name": "Taste of Delhi",
+        "location": "456 Taste Road, Delhi",
+        "price": "800",
+        "cuisine": ["South Indian"],
+        "image": ["TasteOfDelhi1", "TasteOfDelhi2", "TasteOfDelhi3"],
+        "email": "tasteofdelhi@restaurant.com",
+        "phone": "011-87654321",
+        "type": ["Lunch", "Breakfast"],
+        "menu": [
+          { "item": "Dosa", "price": 150, "description": "Crispy fermented rice and lentil crepe.", "type": "Veg" },
+          { "item": "Idli", "price": 100, "description": "Steamed rice cakes served with sambar and chutney.", "type": "Veg" },
+          { "item": "Vada", "price": 120, "description": "Deep-fried savory lentil doughnuts.", "type": "Veg" },
+          { "item": "Sambar", "price": 80, "description": "Spicy lentil soup with vegetables.", "type": "Veg" },
+          { "item": "Pongal", "price": 180, "description": "Savory rice and lentil porridge.", "type": "Veg" },
+          { "item": "Payasam", "price": 90, "description": "Sweet milk pudding with rice and nuts.", "type": "Veg" }
+        ]
+      },
+      {
+        "name": "Delhi Dine",
+        "location": "789 Dine Street, Delhi",
+        "price": "900",
+        "cuisine": ["Chinese", "Street Food"],
+        "image": ["DelhiDine1", "DelhiDine2", "DelhiDine3"],
+        "email": "delhidine@restaurant.com",
+        "phone": "011-11223344",
+        "type": ["Dinner", "Drinks"],
+        "menu": [
+          { "item": "Spring Roll", "price": 150, "description": "Crispy rolls filled with vegetables.", "type": "Veg" },
+          { "item": "Chow Mein", "price": 200, "description": "Stir-fried noodles with vegetables and sauce.", "type": "Veg" },
+          { "item": "Sweet Corn Soup", "price": 100, "description": "Creamy soup made with sweet corn.", "type": "Veg" },
+          { "item": "Dimsum", "price": 250, "description": "Steamed dumplings filled with meat or vegetables.", "type": "Veg/Non-Veg" },
+          { "item": "Momos", "price": 200, "description": "Steamed or fried dumplings with filling.", "type": "Veg/Non-Veg" },
+          { "item": "Ice Cream", "price": 120, "description": "Cold and creamy dessert with various flavors.", "type": "Veg" }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gandhi Marg",
+    "city": "Nagpur",
+    "restaurants": [
+      {
+        "name": "Nagpur Bites",
+        "location": "123 Bites Avenue, Nagpur",
+        "price": "950",
+        "cuisine": ["Fast Food"],
+        "image": ["NagpurBites1", "NagpurBites2", "NagpurBites3"],
+        "email": "nagpurbites@restaurant.com",
+        "phone": "0712-1234567",
+        "type": ["Snacks", "NightLife"],
+        "menu": [
+          { "item": "Burger", "price": 150, "description": "Juicy beef patty with fresh vegetables in a bun.", "type": "Non-Veg" },
+          { "item": "Fries", "price": 80, "description": "Crispy golden potato fries.", "type": "Veg" },
+          { "item": "Pizza", "price": 250, "description": "Cheesy pizza with various toppings.", "type": "Veg/Non-Veg" },
+          { "item": "Hot Dog", "price": 120, "description": "Grilled sausage in a bun with condiments.", "type": "Non-Veg" },
+          { "item": "Soda", "price": 50, "description": "Carbonated soft drink.", "type": "Veg" },
+          { "item": "Brownie", "price": 90, "description": "Rich and fudgy chocolate brownie.", "type": "Veg" }
+        ]
+      },
+      {
+        "name": "Gandhi Grill",
+        "location": "456 Grill Road, Nagpur",
+        "price": "850",
+        "cuisine": ["Street Food", "North Indian"],
+        "image": ["GandhiGrill1", "GandhiGrill2", "GandhiGrill3"],
+        "email": "gandhigrill@restaurant.com",
+        "phone": "0712-7654321",
+        "type": ["Dinner", "Lunch"],
+        "menu": [
+          { "item": "Kebab", "price": 200, "description": "Grilled skewers of seasoned meat.", "type": "Non-Veg" },
+          { "item": "Biryani", "price": 250, "description": "Fragrant rice dish with spices and meat.", "type": "Non-Veg" },
+          { "item": "Tandoori Chicken", "price": 300, "description": "Spiced chicken roasted in a clay oven.", "type": "Non-Veg" },
+          { "item": "Chaat", "price": 100, "description": "Savory street food snack with various ingredients.", "type": "Veg" },
+          { "item": "Roti", "price": 20, "description": "Flatbread made from whole wheat flour.", "type": "Veg" },
+          { "item": "Lassi", "price": 80, "description": "Sweet yogurt-based drink.", "type": "Veg" }
+        ]
+      },
+      {
+        "name": "Marg Bistro",
+        "location": "789 Bistro Lane, Nagpur",
+        "price": "900",
+        "cuisine": ["North Indian", "South Indian", "Chinese"],
+        "image": ["MargBistro1", "MargBistro2", "MargBistro3"],
+        "email": "margbistro@restaurant.com",
+        "phone": "0712-1122334",
+        "type": ["Lunch", "Drinks"],
+        "menu": [
+          { "item": "Dal Tadka", "price": 150, "description": "Spiced yellow lentils tempered with ghee.", "type": "Veg" },
+          { "item": "Chicken Curry", "price": 250, "description": "Spicy chicken curry with aromatic spices.", "type": "Non-Veg" },
+          { "item": "Vegetable Korma", "price": 200, "description": "Mixed vegetables cooked in a creamy sauce.", "type": "Veg" },
+          { "item": "Pulao", "price": 180, "description": "Fragrant rice cooked with vegetables.", "type": "Veg" },
+          { "item": "Chicken Biryani", "price": 300, "description": "Layered rice dish with chicken and spices.", "type": "Non-Veg" },
+          { "item": "Raita", "price": 80, "description": "Cooling yogurt dish with vegetables.", "type": "Veg" }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gandhi Nagar",
+    "city": "Chennai",
+    "restaurants": [
+      {
+        "name": "Chennai Delights",
+        "location": "123 Delights Boulevard, Chennai",
+        "price": "950",
+        "cuisine": ["South Indian", "Street Food"],
+        "image": ["ChennaiDelight1", "ChennaiDelight2", "ChennaiDelight3"],
+        "email": "chennaidelights@restaurant.com",
+        "phone": "044-1234567",
+        "type": ["Dinner", "Breakfast"],
+        "menu": [
+          { "item": "Masala Dosa", "price": 150, "description": "Crispy dosa with spiced potato filling.", "type": "Veg" },
+          { "item": "Medu Vada", "price": 120, "description": "Savory lentil doughnuts served with sambar.", "type": "Veg" },
+          { "item": "Chicken Chettinad", "price": 300, "description": "Spicy chicken curry with Chettinad spices.", "type": "Non-Veg" },
+          { "item": "Curd Rice", "price": 100, "description": "Rice mixed with yogurt and seasoned with spices.", "type": "Veg" },
+          { "item": "Pongal", "price": 180, "description": "Savory rice and lentil porridge.", "type": "Veg" },
+          { "item": "Filter Coffee", "price": 60, "description": "Strong South Indian coffee brewed with a filter.", "type": "Veg" }
+        ]
+      },
+      {
+        "name": "Nagar Nibbles",
+        "location": "456 Nibbles Street, Chennai",
+        "price": "900",
+        "cuisine": ["Chinese"],
+        "image": ["NegarNibbles1", "NegarNibbles2", "NegarNibbles3"],
+        "email": "nagarnibbles@restaurant.com",
+        "phone": "044-7654321",
+        "type": ["Lunch", "Snacks"],
+        "menu": [
+          { "item": "Vegetable Fried Rice", "price": 200, "description": "Stir-fried rice with vegetables and soy sauce.", "type": "Veg" },
+          { "item": "Chicken Manchurian", "price": 250, "description": "Fried chicken pieces in a tangy sauce.", "type": "Non-Veg" },
+          { "item": "Spring Roll", "price": 150, "description": "Crispy rolls filled with vegetables.", "type": "Veg" },
+          { "item": "Hot and Sour Soup", "price": 100, "description": "Spicy and tangy soup with vegetables.", "type": "Veg" },
+          { "item": "Chicken Satay", "price": 220, "description": "Grilled chicken skewers with peanut sauce.", "type": "Non-Veg" },
+          { "item": "Dim Sum", "price": 250, "description": "Steamed dumplings with assorted fillings.", "type": "Veg/Non-Veg" }
+        ]
+      },
+      {
+        "name": "Gandhi Eats",
+        "location": "789 Eats Avenue, Chennai",
+        "price": "850",
+        "cuisine": ["Fast Food", "South Indian", "North Indian"],
+        "image": ["GandhiEats1", "GandhiEats2", "GandhiEats3"],
+        "email": "gandhieats@restaurant.com",
+        "phone": "044-1122334",
+        "type": ["Lunch", "Snacks", "Drinks"],
+        "menu": [
+          { "item": "Burger", "price": 180, "description": "Classic burger with beef patty and toppings.", "type": "Non-Veg" },
+          { "item": "Masala Idli", "price": 120, "description": "Idlis tossed with spices and curry leaves.", "type": "Veg" },
+          { "item": "Chicken Shawarma", "price": 250, "description": "Marinated chicken wrapped in pita bread.", "type": "Non-Veg" },
+          { "item": "Pesarattu", "price": 150, "description": "Green gram crepe with spices and chutney.", "type": "Veg" },
+          { "item": "Fruit Juice", "price": 100, "description": "Freshly squeezed juice from seasonal fruits.", "type": "Veg" },
+          { "item": "Cheese Toast", "price": 90, "description": "Toasted bread with melted cheese.", "type": "Veg" }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vihar Colony",
+    "city": "Mumbai",
+    "restaurants": [
+      {
+        "name": "Mumbai Spice",
+        "location": "123 Spice Road, Mumbai",
+        "price": "1200",
+        "cuisine": ["Street Food"],
+        "image": ["MumbaiSpice1", "MumbaiSpice2", "MumbaiSpice3"],
+        "email": "mumbaispice@restaurant.com",
+        "phone": "022-1234567",
+        "type": ["Dinner", "NightLife"],
+        "menu": [
+          { "item": "Pav Bhaji", "price": 150, "description": "Spicy vegetable mash served with buttered bread rolls.", "type": "Veg" },
+          { "item": "Bhel Puri", "price": 120, "description": "Crunchy snack made with puffed rice and tamarind sauce.", "type": "Veg" },
+          { "item": "Vada Pav", "price": 100, "description": "Spicy potato fritter sandwiched in a bun.", "type": "Veg" },
+          { "item": "Misal Pav", "price": 180, "description": "Spicy curry with bean sprouts served with bread rolls.", "type": "Veg" },
+          { "item": "Keema Pav", "price": 220, "description": "Spicy minced meat curry served with bread rolls.", "type": "Non-Veg" },
+          { "item": "Chaas", "price": 80, "description": "Buttermilk drink seasoned with spices.", "type": "Veg" }
+        ]
+      },
+      {
+        "name": "Taste of Mumbai",
+        "location": "456 Taste Avenue, Mumbai",
+        "price": "1000",
+        "cuisine": ["North Indian", "Chinese"],
+        "image": ["TasteOfMumbai1", "TasteOfMumbai2", "TasteOfMumbai3"],
+        "email": "tasteofmumbai@restaurant.com",
+        "phone": "022-7654321",
+        "type": ["Lunch", "Breakfast"],
+        "menu": [
+          { "item": "Chicken Tikka", "price": 250, "description": "Grilled marinated chicken chunks.", "type": "Non-Veg" },
+          { "item": "Paneer Butter Masala", "price": 280, "description": "Paneer cubes cooked in a rich butter sauce.", "type": "Veg" },
+          { "item": "Chow Mein", "price": 200, "description": "Stir-fried noodles with vegetables and sauce.", "type": "Veg" },
+          { "item": "Vegetable Spring Roll", "price": 150, "description": "Crispy rolls filled with assorted vegetables.", "type": "Veg" },
+          { "item": "Egg Fried Rice", "price": 180, "description": "Fried rice with scrambled eggs and vegetables.", "type": "Non-Veg" },
+          { "item": "Rasgulla", "price": 100, "description": "Sweet spongy dessert soaked in syrup.", "type": "Veg" }
+        ]
+      },
+      {
+        "name": "Mumbai Dine",
+        "location": "789 Dine Street, Mumbai",
+        "price": "1100",
+        "cuisine": ["South Indian", "Fast Food"],
+        "image": ["MumbaiDine1", "MumbaiDine2", "MumbaiDine3"],
+        "email": "mumbaidine@restaurant.com",
+        "phone": "022-1122334",
+        "type": ["Dinner", "Drinks"],
+        "menu": [
+          { "item": "Masala Dosa", "price": 150, "description": "Crispy dosa filled with spiced potato filling.", "type": "Veg" },
+          { "item": "Chicken Biryani", "price": 300, "description": "Layered rice dish with chicken and spices.", "type": "Non-Veg" },
+          { "item": "French Fries", "price": 90, "description": "Crispy potato fries.", "type": "Veg" },
+          { "item": "Chicken Wings", "price": 250, "description": "Spicy grilled chicken wings.", "type": "Non-Veg" },
+          { "item": "Gulab Jamun", "price": 100, "description": "Sweet fried dough balls soaked in syrup.", "type": "Veg" },
+          { "item": "Milkshake", "price": 120, "description": "Creamy milkshake with various flavors.", "type": "Veg" }
+        ]
+      }
+    ]
+  }
+]

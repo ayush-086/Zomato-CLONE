@@ -1,0 +1,101 @@
+.nav-container {
+    z-index: 2;
+    animation: fadeIn 2s both;
+    transition: 2s;
+}
+
+.login {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.login li {
+    cursor: pointer;
+}
+#createAccount {
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.profile {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile i {
+    font-size: 50px;
+}
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.profile button {
+    position: absolute; 
+    top: 3rem;
+    right: 2rem;
+    padding: 8px 16px;
+    font-size: 30px;
+    background-color: rgb(200, 224, 104);
+    color:black;
+    border: 2px solid blue;
+    z-index: 1; 
+}
+
+.profile button:hover {
+    border: 2px solid black;
+    background: rgb(255, 0, 0);
+    color: blue;
+    transition: 1s ease-in-out;
+}
+@media (max-width: 455px) {
+    .nav-container {
+        padding: 10px 20px;
+    }
+    
+    .login {
+        gap: 5px;
+    }
+    #logo {
+        width: 70px;
+    }
+    .login li {
+        font-size: 10px;
+    }
+    #createAccount {
+        padding: 5px;
+    }
+    .profile i {
+        font-size: 25px;
+    }
+    
+    .profile button {
+        top: 1.5rem;
+        right: 1rem;
+        padding: 5px 10px;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 455px) {
+    .nav-container {
+        padding: 20px 30px;
+    }
+    
+    .login {
+        gap: 30px;
+    }
+    #logo {
+        width: 160px;
+    }
+    .login li {
+        font-size: 20px;
+    }
+    #createAccount {
+        padding: 5px 10px;
+    }
+}

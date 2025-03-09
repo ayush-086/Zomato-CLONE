@@ -1,0 +1,131 @@
+/* Modal Overlay */
+.user-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+/* Modal Content */
+.user-modal {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    outline: none; 
+}
+
+.user-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user-header h2 {
+    flex-grow: 1;
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.user-header img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+
+form p {
+    margin: 10px 0;
+    font-size: 0.8em;
+    color: #666;
+}
+
+form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+p span {
+    color: #007bff;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: underline;
+}
+
+.error {
+    font-size: 0.9em;
+    text-align: center;
+    color: red;
+    margin-top: 10px;
+}
+@media (max-width: 600px) {
+    .user-modal {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .user-header h2 {
+        font-size: 1.2em;
+    }
+
+    form {
+        font-size: 0.9em;
+    }
+
+    form input {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    form button {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    p span {
+        font-size: 0.9em;
+    }
+
+}
