@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Modal from 'react-modal'; // Import Modal for pop-up dialogs
-import './User.css'; // Import CSS styles for the User component
-import { assets } from '../../assets/assets.js'; // Import assets
-import { GoogleLogin } from '@react-oauth/google'; // Import Google login component
-import FacebookLogin from '@greatsumini/react-facebook-login'; // Import Facebook login component
-import { jwtDecode } from 'jwt-decode'; // Import jwtDecode for decoding JWT tokens
+import Modal from 'react-modal'; 
+import './User.css'; 
+import { assets } from '../../assets/assets.js'; 
+import { GoogleLogin } from '@react-oauth/google'; nent
+import FacebookLogin from '@greatsumini/react-facebook-login'; 
+import { jwtDecode } from 'jwt-decode'; 
 
-// Set up the modal's root element for accessibility
+
 Modal.setAppElement('#root');
 
 const User = ({ showUser, setShowUser, isLogin, setIsLogin, setShowProfile }) => {
 
-  // Toggle between login and signup forms
+  
   const toggleForm = () => {
     setIsLogin(!isLogin);
   };
 
-  // Handle form submission for login or signup
   const sendReq = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    const formData = new FormData(e.target); // Collect form data
+    e.preventDefault(); 
+    const formData = new FormData(e.target);
     const data = {
       firstName: formData.get('first-name'),
       lastName: formData.get('last-name'),
@@ -31,14 +30,12 @@ const User = ({ showUser, setShowUser, isLogin, setIsLogin, setShowProfile }) =>
     try {
       let response;
       if (isLogin) {
-        // Send login request
         response = await axios.post('http://localhost:3000/login', data, {
           headers: {
             'Content-Type': 'application/json'
           }
         });
       } else {
-        // Send signup request
         response = await axios.post('http://localhost:3000/signup', data, {
           headers: {
             'Content-Type': 'application/json'
@@ -46,23 +43,19 @@ const User = ({ showUser, setShowUser, isLogin, setIsLogin, setShowProfile }) =>
         });
       }
       const { token, user } = response.data;
-      // Store token and user name in localStorage and update state
       localStorage.setItem('token', token);
       localStorage.setItem('userName', user);
       setShowUser(false);
       setShowProfile(true);
     } catch (error) {
-      // Display error message
       document.querySelector('.error').textContent = error.response.data.message;
     }
   };
 
-  // Handle Facebook login
   const facebookLogin = (response) => {
     setShowProfile(true); 
     setShowUser(false);
     localStorage.setItem('token', response.accessToken);
-    // Fetch user information from Facebook
     fetch(`https://graph.facebook.com/me?access_token=${response.accessToken}&fields=name`)
       .then((res) => res.json())
       .then((data) => {
@@ -78,7 +71,6 @@ const User = ({ showUser, setShowUser, isLogin, setIsLogin, setShowProfile }) =>
       });
   };
 
-  // Handle Google login
   const responseGoogle = (response) => {
     setShowProfile(true); 
     setShowUser(false);
@@ -92,7 +84,7 @@ const User = ({ showUser, setShowUser, isLogin, setIsLogin, setShowProfile }) =>
   return (
     <Modal
       isOpen={showUser}
-      onRequestClose={() => setShowUser(false)} // Close modal on request
+      onRequestClose={() => setShowUser(false)} 
       className="user-modal"
       overlayClassName="user-modal-overlay"
     >
@@ -102,7 +94,6 @@ const User = ({ showUser, setShowUser, isLogin, setIsLogin, setShowProfile }) =>
           <img src={assets.crossIcon} onClick={() => setShowUser(false)} alt="Close" />
         </div>
         <form onSubmit={sendReq}>
-          {/* Conditional rendering for signup form fields */}
           {!isLogin && (
             <>
               <div>
@@ -148,7 +139,7 @@ const User = ({ showUser, setShowUser, isLogin, setIsLogin, setShowProfile }) =>
           <GoogleLogin 
             buttonText="Continue with Google"
             className="google-button"
-            onSuccess={responseGoogle} // Handle successful Google login
+            onSuccess={responseGoogle} 
             onFailure={() => {
               document.getElementsByClassName('error').textContent = "Error, please try again or use one of the other methods";
             }}
@@ -158,7 +149,7 @@ const User = ({ showUser, setShowUser, isLogin, setIsLogin, setShowProfile }) =>
             appId='1621312848664618'
             textButton='Continue with Facebook'
             fields='name,email,picture'
-            callback={facebookLogin} // Handle successful Facebook login
+            callback={facebookLogin} 
             cssClass="facebook-button"
             onSuccess={facebookLogin}
             onFail={() => {

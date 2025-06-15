@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './Wallpaper.css'; // Import component-specific styles
-import { assets, foodItemsImg } from '../../assets/assets'; // Import assets
+import './Wallpaper.css'; 
+import { assets, foodItemsImg } from '../../assets/assets'; 
 import axios from 'axios';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import { Link } from 'react-router-dom'; 
 
 const Wallpaper = () => {
-  const [restaurants, setRestaurants] = useState([]); // State for all restaurants
-  const [selectedRestaurant, setSelectedRestaurant] = useState('Select a location'); // State for selected location
-  const [searchValue, setSearchValue] = useState(''); // State for search input value
-  const [filteredRestaurant, setFilteredRestaurant] = useState([]); // State for filtered restaurant list
+  const [restaurants, setRestaurants] = useState([]); 
+  const [selectedRestaurant, setSelectedRestaurant] = useState('Select a location'); 
+  const [searchValue, setSearchValue] = useState(''); 
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]); 
 
-  // Fetch restaurants data from API on component mount
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
@@ -19,26 +18,24 @@ const Wallpaper = () => {
             'Content-Type': 'application/json',
           },
         });
-        setRestaurants(response.data); // Update restaurants state
+        setRestaurants(response.data);
       } catch (error) {
-        console.error('Error fetching food items:', error); // Log error if fetch fails
+        console.error('Error fetching food items:', error);
       }
     };
 
     fetchRestaurants();
   }, []);
 
-  // Handle location selection change
   const handleLocationChange = (event) => {
-    setSelectedRestaurant(event.target.value); // Update selected location
-    setSearchValue(''); // Clear search input
-    setFilteredRestaurant([]); // Clear filtered restaurant list
+    setSelectedRestaurant(event.target.value); 
+    setSearchValue('');
+    setFilteredRestaurant([]); 
   };
 
-  // Handle search input changes
   const searchHandler = (event) => {
     const value = event.target.value;
-    setSearchValue(value); // Update search value
+    setSearchValue(value); 
     const items = [];
     if (value.length >= 0 && selectedRestaurant !== 'Select a location') {
       const selectedRestaurantData = restaurants.find(
@@ -47,18 +44,17 @@ const Wallpaper = () => {
       if (selectedRestaurantData) {
         selectedRestaurantData.restaurants.forEach((item) => {
           if (item.name.toLowerCase().includes(value.toLowerCase())) {
-            items.push(item); // Add item to filtered list if it matches search
+            items.push(item); 
           }
         });
       }
-      setFilteredRestaurant(items); // Update filtered restaurant list
+      setFilteredRestaurant(items); 
     }
   };
 
-  // Handle search input blur event
   const searchBlur = () => {
     setTimeout(() => {
-      setFilteredRestaurant([]); // Clear filtered list after a delay
+      setFilteredRestaurant([]); 
     }, 200);
   };
 

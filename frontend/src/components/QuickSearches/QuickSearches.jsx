@@ -1,30 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './QuickSearches.css'; // Import CSS styles for the QuickSearches component
-import { assets } from '../../assets/assets.js'; // Import assets
-import { Link } from 'react-router-dom'; // Import Link for routing
+import './QuickSearches.css'; 
+import { assets } from '../../assets/assets.js'; 
+import { Link } from 'react-router-dom';
 
 const QuickSearches = () => {
-  const [foodList, setFoodList] = useState([]); // State to hold the list of food items
+  const [foodList, setFoodList] = useState([]); 
 
-  // Function to fetch food items from the server
   const getItems = async () => {
     try {
       const response = await axios.get('http://localhost:3000/getItems', {
         headers: {
-          'Content-Type': 'application/json' // Specify content type for the request
+          'Content-Type': 'application/json' 
         }
       });
-      setFoodList(response.data); // Set the fetched data to state
+      setFoodList(response.data); 
     } catch (error) {
-      console.error('Error fetching food items:', error); // Log any errors
+      console.error('Error fetching food items:', error);
     }
   };
 
-  // Fetch food items on component mount
   useEffect(() => {
     getItems();
-  }, []); // Empty dependency array means this effect runs once on mount
+  }, []);
 
   return (
     <div className='quick-searches container'>
@@ -33,7 +31,6 @@ const QuickSearches = () => {
       <div className="row">
         {foodList.map((foodItem) => (
           <div className='col-4' key={foodItem._id}>
-            {/* Link to the filter page with state containing the food item name */}
             <Link to={`/filter`}
               state={{
                 name: foodItem.name

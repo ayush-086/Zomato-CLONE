@@ -5,22 +5,21 @@ import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 
 const Filter = () => {
-  const [restaurants, setRestaurants] = useState([]); // State to hold all restaurants
-  const [filteredRestaurants, setFilteredRestaurants] = useState([]); // State to hold filtered restaurants
-  const [selectOptions, setSelectOptions] = useState([]); // State to hold options for selection
-  const [showFilter, setShowFilter] = useState(false); // Toggle filter visibility
-  const [selectedLocation, setSelectedLocation] = useState(''); // State for selected location
-  const [selectedCuisines, setSelectedCuisines] = useState([]); // State for selected cuisines
-  const [selectedCost, setSelectedCost] = useState(''); // State for selected cost range
-  const [sortOption, setSortOption] = useState(''); // State for sorting option
-  const uniqueLocations = new Set(); // Set to track unique locations
+  const [restaurants, setRestaurants] = useState([]); 
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]); 
+  const [selectOptions, setSelectOptions] = useState([]); 
+  const [showFilter, setShowFilter] = useState(false); 
+  const [selectedLocation, setSelectedLocation] = useState(''); 
+  const [selectedCuisines, setSelectedCuisines] = useState([]); 
+  const [selectedCost, setSelectedCost] = useState('');
+  const [sortOption, setSortOption] = useState(''); 
+  const uniqueLocations = new Set(); 
 
   const location = useLocation();
-  const { name } = location.state; // Retrieve the restaurant type from location state
-  const itemsPerPage = 4; // Number of items per page
+  const { name } = location.state; 
+  const itemsPerPage = 4;
 
   useEffect(() => {
-    // Fetch restaurant data from the server
     const fetchRestaurants = async () => {
       try {
         const response = await axios.get('http://localhost:3000/getRestaurants', {
@@ -28,7 +27,7 @@ const Filter = () => {
             'Content-Type': 'application/json',
           },
         });
-        setRestaurants(response.data); // Set the fetched data to state
+        setRestaurants(response.data);
       } catch (error) {
         console.error('Error fetching food items:', error);
       }
@@ -38,7 +37,6 @@ const Filter = () => {
   }, []);
 
   useEffect(() => {
-    // Filter restaurants based on the selected type
     const filterRestaurant = () => {
       const items = [];
       restaurants.forEach((restaurant) => {
@@ -50,22 +48,21 @@ const Filter = () => {
           });
         });
       });
-      setSelectOptions(items); // Set options for selection
-      setFilteredRestaurants(items); // Set filtered restaurants
+      setSelectOptions(items); 
+      setFilteredRestaurants(items); 
     };
     filterRestaurant();
   }, [restaurants, name]);
 
   const selectChangeHandler = (event) => {
-    // Handle location selection change
     const selectedLocation = event.target.value;
     if (selectedLocation === "Select a location") {
       setSelectedLocation(selectedLocation)
-      setFilteredRestaurants(selectOptions); // Show all options if "Select a location" is chosen
+      setFilteredRestaurants(selectOptions); 
     } else {
       const filteredItems = selectOptions.filter((item) => item.location === selectedLocation);
       setSelectedLocation(selectedLocation);
-      setFilteredRestaurants(filteredItems); // Filter items by location
+      setFilteredRestaurants(filteredItems); 
     }
   };
 
@@ -75,28 +72,25 @@ const Filter = () => {
     const label = document.querySelector(`label[for=${event.target.id}]`).textContent;
 
     if (checked) {
-      setSelectedCuisines(prev => [...prev, label]); // Add selected cuisine
+      setSelectedCuisines(prev => [...prev, label]); 
     } else {
-      setSelectedCuisines(prev => prev.filter(cuisine => cuisine !== label)); // Remove unselected cuisine
+      setSelectedCuisines(prev => prev.filter(cuisine => cuisine !== label));
     }
   };
 
   const costChangeHandler = (event) => {
-    // Handle cost radio button change
     const { id } = event.target;
     const label = document.querySelector(`label[for=${id}]`).textContent;
 
-    setSelectedCost(label); // Set selected cost range
+    setSelectedCost(label); 
   };
 
   const sortChangeHandler = (event) => {
-    // Handle sort radio button change
     const { id } = event.target;
-    setSortOption(id); // Set sort option
+    setSortOption(id); 
   };
 
   const resetHandler = () => {
-    // Reset all filters and form controls
     setSelectedLocation('');
     setSelectedCuisines([]);
     setSelectedCost('');
@@ -106,24 +100,21 @@ const Filter = () => {
     document.querySelectorAll('input[type=checkbox]').forEach(checkbox => checkbox.checked = false);
     document.querySelectorAll('input[type=radio]').forEach(radio => radio.checked = false);
   
-    setFilteredRestaurants(selectOptions); // Reset filtered results
+    setFilteredRestaurants(selectOptions); 
     setShowFilter(false);
   };
 
   const handleResize = () => {
-    // Handle window resize to adjust filter visibility
     if (window.innerWidth >= 768) {
-      setShowFilter(false); // Hide filter on larger screens
+      setShowFilter(false); 
     }
   };
 
   useEffect(() => {
-    let filteredItems = [...selectOptions]; // Copy options to avoid mutating original array
-    // Apply location filter
+    let filteredItems = [...selectOptions]; 
     if (selectedLocation && selectedLocation !== "Select a location") {
       filteredItems = filteredItems.filter(item => item.location === selectedLocation);
     }
-    // Apply cuisine filter
     if (selectedCuisines.length > 0) {
       filteredItems = filteredItems.filter(item =>
         item.cuisine.some(cuisine => selectedCuisines.includes(cuisine))
@@ -153,19 +144,19 @@ const Filter = () => {
   
     // Apply sorting
     if (sortOption === 'sort-1') {
-      filteredItems.sort((a, b) => a.price - b.price); // Sort by price low to high
+      filteredItems.sort((a, b) => a.price - b.price); 
     } else if (sortOption === 'sort-2') {
-      filteredItems.sort((a, b) => b.price - a.price); // Sort by price high to low
+      filteredItems.sort((a, b) => b.price - a.price); 
     }
   
     
 
-    setFilteredRestaurants(filteredItems); // Update filtered restaurants
+    setFilteredRestaurants(filteredItems); 
   
     window.addEventListener('resize', handleResize);
   
     return () => {
-      window.removeEventListener('resize', handleResize); // Clean up event listener
+      window.removeEventListener('resize', handleResize);
     };
   }, [selectedLocation, selectedCuisines, selectedCost, selectOptions, sortOption]);
 
@@ -186,7 +177,7 @@ const Filter = () => {
                     uniqueLocations.add(item.location);
                     return <option key={item._id} value={item.location}>{item.location}</option>;
                   }
-                  return ""; // Return empty string if location already exists
+                  return ""; 
                 })}
               </select>
               <p>Cuisine</p>
